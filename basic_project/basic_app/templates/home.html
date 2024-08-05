@@ -6,79 +6,83 @@
     <title>Portfolio</title>
     {% load static %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
-<body>
-    <section id="overview">
-        <h1>Overview</h1>
-        <p>
-            I am a Software Development Engineer (SDE) with 1 year of experience specializing in backend development using Python. I have contributed to cutting-edge projects utilizing technologies such as FastAPI and Django. I champion best industry practices to enhance user experiences and consistently deliver efficient and innovative code. Eager to apply my skills and dedication to drive success in forward-thinking projects while advancing my career within a team-focused organization.
-        </p>
-    </section>
+<body class="bg-light text-dark">
+    <div class="container">
+        <section id="overview" class="my-5">
+            <h1 class="text-danger animate__animated animate__fadeInDown">👋 Overview</h1>
+            <p class="lead animate__animated animate__fadeInUp">
+                I'm a Software Development Engineer (SDE) with 1 year of experience specializing in backend development using Python. I have contributed to cutting-edge projects utilizing technologies such as FastAPI and Django. I champion best industry practices to enhance user experiences and consistently deliver efficient and innovative code. Eager to apply my skills and dedication to drive success in forward-thinking projects while advancing my career within a team-focused organization.
+            </p>
+            <div class="tech-stack animate__animated animate__fadeIn">
+                <h2 class="text-warning">🛠 Tech Stack</h2>
+                <ul class="tech-list">
+                    <li><img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/> Python</li>
+                    <li><img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"/> Django</li>
+                    <li><img src="https://github.com/devicons/devicon/raw/master/icons/fastapi/fastapi-plain.svg" alt="FastAPI" width="48"/> FastAPI</li>
+                    <li><img src="https://github.com/devicons/devicon/raw/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="48"/> PostgreSQL</li>
+                    <li><img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"/> SQL</li>
+                    <li><img src="https://github.com/devicons/devicon/raw/master/icons/django/django-plain.svg" alt="DRF" width="48"/> DRF</li>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul class="experience-list">
-            <li>
-                Leveraged Twitter API to extract user data for analysis.
-            </li>
-            <li>
-                Analyzed tweeting patterns, pinpointing a user’s most active day and peak hours.
-            </li>
-            <li>
-                Improved data extraction efficiency for a newspaper processing project, achieving a remarkable 75% reduction in processing time—from 15-20 minutes down to just 5 minutes.
-            </li>
-            <li>
-                Implemented code optimizations to ensure uniqueness, eliminating the risk of duplication in the database.
-            </li>
-            <li>
-                Led the development and optimization on web apps, focusing primarily on FastAPI, Django, and Python.
-            </li>
-            <li>
-                Authored clean, well-structured, and efficient code, showcasing adeptness in GitHub version control.
-            </li>
-            <li>
-                Managed change requests and introduced new functionalities to enhance the code.
-            </li>
-            <li>
-                Maintained up-to-date knowledge of the latest web development trends, tools, and best practices.
-            </li>
-        </ul>
-    </section>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="48"/> Docker</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg" alt="Jira" width="48"/> Jira</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="48"/> AWS</li>
+                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap" width="48"/> Bootstrap</li>
+                                        <li><img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/> JavaScript</li>
+                    <li><img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"/> HTML</li>
+                    <li><img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"/> CSS</li>
+                </ul>
+            </div>
+        </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <p>I hold a Bachelor of Science in Software Engineering from PUCIT.</p>
-    </section>
+        <section id="experience" class="my-5">
+            <h2 class="text-danger animate__animated animate__fadeInDown">💼 Experience</h2>
+            <ul class="list-group animate__animated animate__fadeIn">
+                <li class="list-group-item bg-light">Leveraged Twitter API to extract user data for analysis.</li>
+                <li class="list-group-item bg-light">Analyzed tweeting patterns, pinpointing a user’s most active day and peak hours.</li>
+                <li class="list-group-item bg-light">Improved data extraction efficiency for a newspaper processing project, achieving a remarkable 75% reduction in processing time—from 15-20 minutes down to just 5 minutes.</li>
+                <li class="list-group-item bg-light">Implemented code optimizations to ensure uniqueness, eliminating the risk of duplication in the database.</li>
+                <li class="list-group-item bg-light">Led the development and optimization on web apps, focusing primarily on FastAPI, Django, and Python.</li>
+                <li class="list-group-item bg-light">Authored clean, well-structured, and efficient code, showcasing adeptness in GitHub version control.</li>
+                <li class="list-group-item bg-light">Managed change requests and introduced new functionalities to enhance the code.</li>
+                <li class="list-group-item bg-light">Maintained up-to-date knowledge of the latest web development trends, tools, and best practices.</li>
+            </ul>
+        </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li><i class="fas fa-rocket"></i> FastAPI</li>
-            <li><i class="fas fa-leaf"></i> Django</li>
-            <li><i class="fas fa-python"></i> Python</li>
-            <li><i class="fas fa-database"></i> PostgreSQL</li>
-            <li><i class="fas fa-server"></i> SQL</li>
-            <li><i class="fas fa-database"></i> SQLite</li>
-            <li><i class="fas fa-broadcast-tower"></i> DRF</li>
-            <li><i class="fas fa-code"></i> JavaScript</li>
-            <li><i class="fas fa-html5"></i> HTML</li>
-            <li><i class="fas fa-css3-alt"></i> CSS</li>
-            <li><i class="fas fa-code-branch"></i> Git</li>
-        </ul>
-    </section>
+        <section id="education" class="my-5">
+            <h2 class="text-danger animate__animated animate__fadeInDown">🎓 Education</h2>
+            <div class="education-details animate__animated animate__fadeIn">
+                <div class="degree">
+                    <h3 class="text-warning">Bachelor of Science in Software Engineering</h3>
+                    <p class="university">University of the Punjab, Pakistan</p>
+                    <p class="duration">2019 - 2023</p>
+                    <p class="cgpa">CGPA: 3.00</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Here are some of my notable projects:</p>
-        <ul class="projects-list">
-            <li>
-                <h3>Project Name</h3>
-                <p>Description of the project, technologies used, and any notable achievements or outcomes.</p>
-            </li>
-            <!-- Add more projects as needed -->
-        </ul>
-    </section>
+        </section>
 
+
+        <section id="projects" class="my-5">
+            <h2 class="text-danger animate__animated animate__fadeInDown">🚀 Projects</h2>
+            <p class="lead animate__animated animate__fadeIn">Here are some of my notable projects:</p>
+            <ul class="list-group animate__animated animate__fadeIn">
+                <li class="list-group-item bg-light">
+                    <h3>Project Name</h3>
+                    <p>Description of the project, technologies used, and any notable achievements or outcomes.</p>
+                </li>
+                <!-- Add more projects as needed -->
+            </ul>
+        </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
