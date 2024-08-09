@@ -1,4 +1,5 @@
 # 🚀 Deploy your Django App 
+Deployed link 👉 [https://sulemanawais0.pythonanywhere.com/]
 
 ## 📦 Project Setup
 
