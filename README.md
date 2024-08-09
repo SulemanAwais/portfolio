@@ -16,7 +16,7 @@
    ```
 2. **Navigate to the Project Directory**
    ```bash
-   cd django-deployment-practice ```
+   cd django-deployment-practice
 3. **Create a Virtual Environment**
 
    ```bash 
