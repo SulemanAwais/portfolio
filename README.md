@@ -1,24 +1,4 @@
-# 🚀 Portfolio Website
-
-Welcome to my portfolio website built with Django! This project showcases my skills, experience, and projects using modern web technologies.
-
-## 🛠 Tech Stack
-
-- **Python** 🐍
-- **Django** 🌐
-- **FastAPI** ⚡
-- **PostgreSQL** 🗃️
-- **SQL** 📊
-- **SQLite** 🗄️
-- **DRF** 📜
-- **JavaScript** 💻
-- **HTML** 🧩
-- **CSS** 🎨
-- **Git** 🔧
-- **Docker** 🐳
-- **Jira** 🗂️
-- **AWS** ☁️
-- **Bootstrap** ⚙️
+# 🚀 Deploy your Django App 
 
 ## 📦 Project Setup
 
@@ -36,10 +16,22 @@ Welcome to my portfolio website built with Django! This project showcases my ski
    ```
 2. **Navigate to the Project Directory**
    ```bash
-   cd django-deployment-practice
-  ```
+   cd django-deployment-practice ```
 3. **Create a Virtual Environment**
-```bash
-python -m venv venv
 
+   ```bash 
+   python -m venv venv
+   ```
+4. **Install Python 3.10**
+5. **Install Django**
+```bash
+pip install django=4.0.6
 ```
+6. **Change current directory**
+```bash
+cd basic_project
+```
+7. **Run the project**
+````bash
+python manage.py runserver
+````

@@ -9,6 +9,71 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <style>
+        body {
+            background-color: #333; /* Darker background color */
+            color: #fff; /* White text color */
+            font-family: Arial, sans-serif; /* Improved font */
+        }
+        .tech-stack {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .tech-item {
+            position: relative;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .tech-item img {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+        }
+        .tech-item:hover {
+            transform: scale(1.1);
+        }
+        .tech-item::before {
+            content: attr(data-tech);
+            position: absolute;
+            bottom: 60px; /* Adjust to position the bubble above the icon */
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            color: #fff;
+            background-color: var(--bg-color, #fff); /* Default to white if --bg-color is not set */
+        }
+        .tech-item:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+        .text-warning {
+            color: #ff4500; /* Orange-red color for headings */
+        }
+        .logo-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-image {
+        mix-blend-mode:multiply;
+        mix-blend-mode:multiply
+        }
+    </style>
 </head>
 <body class="bg-light text-dark">
     <div class="container">
@@ -17,40 +82,82 @@
             <p class="lead animate__animated animate__fadeInUp">
                 I'm a Software Development Engineer (SDE) with 1 year of experience specializing in backend development using Python. I have contributed to cutting-edge projects utilizing technologies such as FastAPI and Django. I champion best industry practices to enhance user experiences and consistently deliver efficient and innovative code. Eager to apply my skills and dedication to drive success in forward-thinking projects while advancing my career within a team-focused organization.
             </p>
-            <div class="tech-stack animate__animated animate__fadeIn">
-                <h2 class="text-warning">🛠 Tech Stack</h2>
-                <ul class="tech-list">
-                    <li><img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/> Python</li>
-                    <li><img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"/> Django</li>
-                    <li><img src="https://github.com/devicons/devicon/raw/master/icons/fastapi/fastapi-plain.svg" alt="FastAPI" width="48"/> FastAPI</li>
-                    <li><img src="https://github.com/devicons/devicon/raw/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="48"/> PostgreSQL</li>
-                    <li><img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"/> SQL</li>
-                    <li><img src="https://github.com/devicons/devicon/raw/master/icons/django/django-plain.svg" alt="DRF" width="48"/> DRF</li>
-
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="48"/> Docker</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg" alt="Jira" width="48"/> Jira</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="48"/> AWS</li>
-                    <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap" width="48"/> Bootstrap</li>
-                                        <li><img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/> JavaScript</li>
-                    <li><img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"/> HTML</li>
-                    <li><img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"/> CSS</li>
-                </ul>
-            </div>
         </section>
-
-        <section id="experience" class="my-5">
-            <h2 class="text-danger animate__animated animate__fadeInDown">💼 Experience</h2>
-            <ul class="list-group animate__animated animate__fadeIn">
-                <li class="list-group-item bg-light">Leveraged Twitter API to extract user data for analysis.</li>
-                <li class="list-group-item bg-light">Analyzed tweeting patterns, pinpointing a user’s most active day and peak hours.</li>
-                <li class="list-group-item bg-light">Improved data extraction efficiency for a newspaper processing project, achieving a remarkable 75% reduction in processing time—from 15-20 minutes down to just 5 minutes.</li>
-                <li class="list-group-item bg-light">Implemented code optimizations to ensure uniqueness, eliminating the risk of duplication in the database.</li>
-                <li class="list-group-item bg-light">Led the development and optimization on web apps, focusing primarily on FastAPI, Django, and Python.</li>
-                <li class="list-group-item bg-light">Authored clean, well-structured, and efficient code, showcasing adeptness in GitHub version control.</li>
-                <li class="list-group-item bg-light">Managed change requests and introduced new functionalities to enhance the code.</li>
-                <li class="list-group-item bg-light">Maintained up-to-date knowledge of the latest web development trends, tools, and best practices.</li>
+        <section id="tech-stack" class="my-5">
+        <h2 class="text-warning animate__animated animate__fadeInDown">🛠 Tech Stack</h2><br>
+        <div class="tech-stack animate__animated animate__fadeIn">
+            <ul class="tech-list">
+                <li class="tech-item" data-tech="Python" style="--bg-color: #3776AB;">
+                    <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/>
+                </li>
+                <li class="tech-item" data-tech="Django" style="--bg-color: #092E20;">
+                    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"/>
+                </li>
+                <li class="tech-item" data-tech="FastAPI" style="--bg-color: #009688;">
+                    <img src="https://github.com/devicons/devicon/raw/master/icons/fastapi/fastapi-plain.svg" alt="FastAPI" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="DRF" style="--bg-color: #092E20;">
+                    <img src="https://github.com/devicons/devicon/raw/master/icons/djangorest/djangorest-plain.svg" alt="DRF" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="SQL Alchemy" style="--bg-color: #FF9900;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg" alt="SQL Alchemy" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="PostgreSQL" style="--bg-color: #336791;">
+                    <img src="https://github.com/devicons/devicon/raw/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="MySQL" style="--bg-color: #4479A1;">
+                    <img src="https://github.com/devicons/devicon/raw/master/icons/mysql/mysql-original.svg" alt="MySQL" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="Microsoft SQL Server" style="--bg-color: #CC2927;">
+                    <img src="https://github.com/devicons/devicon/raw/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Microsoft SQL Server" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="Docker" style="--bg-color: #2496ED;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="Jira" style="--bg-color: #0052CC;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg" alt="Jira" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="JQuery" style="--bg-color: #0769AD;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg" alt="JQuery" width="48"/>
+                </li>
+                <li class="tech-item" data-tech="JavaScript" style="--bg-color: #F7DF1E;">
+                    <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/>
+                </li>
+                <li class="tech-item" data-tech="HTML" style="--bg-color: #E34F26;">
+                    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"/>
+                </li>
+                <li class="tech-item" data-tech="CSS" style="--bg-color: #1572B6;">
+                    <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"/>
+                </li>
+                <li class="tech-item" data-tech="Bootstrap" style="--bg-color: #7952B3;">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap" width="48"/>
+                </li>
             </ul>
-        </section>
+        </div>
+    </section>
+        <div class="experience-section">
+    <h2 class="text-warning animate__animated animate__fadeInDown">🚀 Work Experience</h2>
+
+    <div class="job animate__animated animate__fadeIn">
+        <div class="logo-container">
+            <img class="logo-image" src="https://media.licdn.com/dms/image/v2/D4E0BAQHAR0hnSdpWew/company-logo_200_200/company-logo_200_200/0/1682677160393/meissasoft_logo?e=2147483647&v=beta&t=ZkbeGUEn56QmJ8LHU0yI4aZvx_ryWv0Fj1qUnQbdBJs" alt="Company Logo" width="100"/> <!-- Add your company's logo URL here -->
+        </div>
+        <div class="job-details">
+            <h3>Associate Software Engineer</h3>
+            <p><strong>Meissasoft</strong> - Aug 2023 to Present</p> <!-- Update with actual details -->
+            <p>Specialized in Python , Django and FastAPI, contributing to key projects and optimizing processes.</p>
+        </div>
+        <div class="technologies-used">
+            <h4>Technologies Used:</h4>
+            <ul class="tech-used-list">
+                <li><img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/> Python</li>
+                <li><img src="https://github.com/devicons/devicon/raw/master/icons/fastapi/fastapi-plain.svg" alt="FastAPI" width="48"/> FastAPI</li>
+                <li><img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"/> Django</li>
+                <!-- Add more technologies as needed -->
+            </ul>
+        </div>
+    </div>
+</div>
 
         <section id="education" class="my-5">
             <h2 class="text-danger animate__animated animate__fadeInDown">🎓 Education</h2>
