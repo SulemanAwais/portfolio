@@ -3,29 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Suleman Awais</title>
-    {% load static %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-        <style>
+    <title>Suleman Awais - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
         body {
-            background-color: #333; /* Darker background color */
-            color: #fff; /* White text color */
-            font-family: Arial, sans-serif; /* Improved font */
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
         }
-        .tech-stack {
-            text-align: center;
-            margin-top: 20px;
+        .bg-dark-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
         }
-        .tech-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
+        .text-gradient {
+            background: linear-gradient(135deg, #ff4500 0%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 69, 0, 0.2);
+        }
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #ff4500;
+        }
+        .btn-primary {
+            background-color: #ff4500;
+            border-color: #ff4500;
+        }
+        .btn-primary:hover {
+            background-color: #ff6347;
+            border-color: #ff6347;
+        }
+        .section-heading {
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #ff4500;
+            transition: width 0.3s ease-in-out;
+        }
+        .section-heading:hover::after {
+            width: 100%;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
         .tech-item {
             position: relative;
@@ -54,139 +91,255 @@
             visibility: hidden;
             transition: opacity 0.3s;
             font-size: 0.9rem;
-            color: #fff;
+            color: #333;
             background-color: var(--bg-color, #fff); /* Default to white if --bg-color is not set */
         }
         .tech-item:hover::before {
             opacity: 1;
             visibility: visible;
         }
-        .text-warning {
-            color: #ff4500; /* Orange-red color for headings */
-        }
-        .logo-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .logo-image {
-        mix-blend-mode:multiply;
-        mix-blend-mode:multiply
-        }
     </style>
 </head>
-<body class="bg-light text-dark">
-    <div class="container">
-        <section id="overview" class="my-5">
-            <h1 class="text-danger animate__animated animate__fadeInDown">Hi👋, I am Suleman Awais</h1>
-            <p class="lead animate__animated animate__fadeInUp">
-                I'm a Software Development Engineer (SDE) with 1 year of experience specializing in backend development using Python. I have contributed to cutting-edge projects utilizing technologies such as FastAPI and Django. I champion best industry practices to enhance user experiences and consistently deliver efficient and innovative code. Eager to apply my skills and dedication to drive success in forward-thinking projects while advancing my career within a team-focused organization.
-            </p>
-        </section>
-        <section id="tech-stack" class="my-5">
-        <h2 class="text-warning animate__animated animate__fadeInDown">🛠 Tech Stack</h2><br>
-        <div class="tech-stack animate__animated animate__fadeIn">
-            <ul class="tech-list">
-                <li class="tech-item" data-tech="Python" style="--bg-color: #3776AB;">
-                    <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/>
-                </li>
-                <li class="tech-item" data-tech="Django" style="--bg-color: #092E20;">
-                    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"/>
-                </li>
-                <li class="tech-item" data-tech="FastAPI" style="--bg-color: #009688;">
-                    <img src="https://github.com/devicons/devicon/raw/master/icons/fastapi/fastapi-plain.svg" alt="FastAPI" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="Django REST Framework" style="--bg-color: #092E20;">
-                    <img src="https://github.com/devicons/devicon/raw/master/icons/djangorest/djangorest-plain.svg" alt="Django REST Framework" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="SQL Alchemy" style="--bg-color: #FF9900;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original-wordmark.svg" alt="SQL Alchemy" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="PostgreSQL" style="--bg-color: #336791;">
-                    <img src="https://github.com/devicons/devicon/raw/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="MySQL" style="--bg-color: #4479A1;">
-                    <img src="https://github.com/devicons/devicon/raw/master/icons/mysql/mysql-original.svg" alt="MySQL" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="Microsoft SQL Server" style="--bg-color: #CC2927;">
-                    <img src="https://github.com/devicons/devicon/raw/master/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="Microsoft SQL Server" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="Docker" style="--bg-color: #2496ED;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="Jira" style="--bg-color: #0052CC;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg" alt="Jira" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="JQuery" style="--bg-color: #0769AD;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-plain-wordmark.svg" alt="JQuery" width="48"/>
-                </li>
-                <li class="tech-item" data-tech="JavaScript" style="--bg-color: #F7DF1E;">
-                    <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/>
-                </li>
-                <li class="tech-item" data-tech="HTML" style="--bg-color: #E34F26;">
-                    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"/>
-                </li>
-                <li class="tech-item" data-tech="CSS" style="--bg-color: #1572B6;">
-                    <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"/>
-                </li>
-                <li class="tech-item" data-tech="Bootstrap" style="--bg-color: #7952B3;">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap" width="48"/>
-                </li>
+<body class="bg-gray-900">
+    <header class="bg-gray-800 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#home" class="text-gray-300 hover:text-orangered transition-colors duration-300">Home</a></li>
+                <li><a href="#skills" class="text-gray-300 hover:text-orangered transition-colors duration-300">Skills</a></li>
+                <li><a href="#experience" class="text-gray-300 hover:text-orangered transition-colors duration-300">Experience</a></li>
+                <li><a href="#education" class="text-gray-300 hover:text-orangered transition-colors duration-300">Education</a></li>
+                <li><a href="#projects" class="text-gray-300 hover:text-orangered transition-colors duration-300">Projects</a></li>
+                <li><a href="#testimonials" class="text-gray-300 hover:text-orangered transition-colors duration-300">Testimonials</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-orangered transition-colors duration-300">Contact</a></li>
             </ul>
-        </div>
-    </section>
-        <div class="experience-section">
-    <h2 class="text-danger animate__animated animate__fadeInDown">🚀 Work Experience</h2>
+        </nav>
+    </header>
 
-    <div class="job animate__animated animate__fadeIn">
-        <div class="logo-container">
-            <img class="logo-image" src="https://media.licdn.com/dms/image/v2/D4E0BAQHAR0hnSdpWew/company-logo_200_200/company-logo_200_200/0/1682677160393/meissasoft_logo?e=2147483647&v=beta&t=ZkbeGUEn56QmJ8LHU0yI4aZvx_ryWv0Fj1qUnQbdBJs" alt="Company Logo" width="100"/> <!-- Add your company's logo URL here -->
-        </div>
-        <div class="job-details">
-            <h3>Associate Software Engineer</h3>
-            <p><strong><a href="https://www.meissasoft.com" target="_blank">Meissasoft</a></strong> - Aug 2023 to Present</p>
-            <p>Specialized in Python , Django and FastAPI, contributing to key projects and optimizing processes.</p>
-        </div>
-    </div>
-</div>
-
-        <section id="education" class="my-5">
-            <h2 class="text-danger animate__animated animate__fadeInDown">🎓 Education</h2>
-            <div class="education-details animate__animated animate__fadeIn">
-                <div class="degree">
-                    <h3 class="text-warning">Bachelor of Science in Software Engineering</h3>
-                    <p class="university">University of the Punjab, Pakistan</p>
-                    <p class="duration">2019 - 2023</p>
-                    <p class="cgpa">CGPA: 2.94</p>
-                </div>
-                <div class="education-item">
-                    <h3 class="text-warning">Intermediate in Pre-Engineering</h3>
-                    <p>Punjab Group of colleges, Pakistan</p>
-                    <p>2017-2019</p>
-                    <p class="grade">Grade: B</p>
+    <main>
+        <section id="home" class="bg-dark-gradient text-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0" data-aos="fade-right">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gradient">Hi, I am Suleman</h1>
+                        <p class="text-xl mb-6">
+                            I'm a Software Development Engineer (SDE) with 1 year of experience specializing in backend development using Python. I have contributed to cutting-edge projects utilizing technologies such as FastAPI and Django. I champion best industry practices to enhance user experiences and consistently deliver efficient and innovative code. Eager to apply my skills and dedication to drive success in forward-thinking projects while advancing my career within a team-focused organization.
+                        </p>
+                        <a href="#contact" class="bg-orangered text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300">Get in Touch</a>
+                    </div>
+                    <div class="md:w-1/2" data-aos="fade-left">
+                        <img src="/placeholder.svg?height=400&width=400" alt="Suleman" class="rounded-full w-64 h-64 mx-auto animate-float">
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Skills & Tech Stack</h2>
+                <div class="tech-stack animate__animated animate__fadeIn">
+                    <ul class="tech-list flex flex-wrap justify-center">
+                        <li class="tech-item mt-4 mx-4" data-tech="Python" style="--bg-color: #3776AB;">
+                            <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="Django" style="--bg-color: #092E20;">
+                            <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="FastAPI" style="--bg-color: #009688;">
+                            <img src="https://github.com/devicons/devicon/raw/master/icons/fastapi/fastapi-plain.svg" alt="FastAPI" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="PostgreSQL" style="--bg-color: #336791;">
+                            <img src="https://github.com/devicons/devicon/raw/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="SQL" style="--bg-color: #F29111;">
+                            <img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="DRF" style="--bg-color: #092E20;">
+                            <img src="https://github.com/devicons/devicon/raw/master/icons/django/django-plain.svg" alt="DRF" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="Docker" style="--bg-color: #2496ED;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="Jira" style="--bg-color: #0052CC;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg" alt="Jira" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="AWS" style="--bg-color: #FF9900;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="Bootstrap" style="--bg-color: #7952B3;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap" width="48"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="JavaScript" style="--bg-color: #F7DF1E;">
+                            <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="HTML" style="--bg-color: #E34F26;">
+                            <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"/>
+                        </li>
+                        <li class="tech-item mt-4 mx-4" data-tech="CSS" style="--bg-color: #1572B6;">
+                            <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
 
-        <section id="projects" class="my-5">
-            <h2 class="text-danger animate__animated animate__fadeInDown">🚀 Projects</h2>
-            <p class="lead animate__animated animate__fadeIn">Coming Soon :)</p>
-            <ul class="list-group animate__animated animate__fadeIn">
-<!--                <li class="list-group-item bg-light">-->
-<!--                    <h3>Project Name</h3>-->
-<!--                    <p>Description of the project, technologies used, and any notable achievements or outcomes.</p>-->
-<!--                </li>-->
-                <!-- Add more projects as needed -->
-            </ul>
+        <section id="experience" class="bg-gray-800 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Work Experience</h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-700 p-6 rounded-lg" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold mb-2 text-orangered">Associate Software Engineer</h3>
+                        <p class="text-gray-300 mb-2">Meissasoft | 2023 - Present</p>
+                        <ul class="list-disc list-inside text-gray-400">
+                            <li>Leveraged Twitter API to extract user data for analysis.</li>
+                            <li>Analyzed tweeting patterns, pinpointing a user’s most active day and peak hours.</li>
+                            <li>Improved data extraction efficiency for a newspaper processing project, achieving a remarkable 75% reduction in processing time—from 15-20 minutes down to just 5 minutes.</li=>
+                            <li>Implemented code optimizations to ensure uniqueness, eliminating the risk of duplication in the database.</li=>
+                            <li>Led the development and optimization on web apps, focusing primarily on FastAPI, Django, and Python.</li=>
+                            <li>Authored clean, well-structured, and efficient code, showcasing adeptness in GitHub version control.</li=>
+                            <li>Managed change requests and introduced new functionalities to enhance the code.</li=>
+                            <li>Maintained up-to-date knowledge of the latest web development trends, tools, and best practices.</li=>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-    </div>
 
+        <section id="education" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Education</h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-left">
+                        <h3 class="text-xl font-semibold mb-2 text-orangered">Bachelor of Science in Software Engineering</h3>
+                        <p class="text-gray-300 mb-2">University of the Punjab, Pakistan | 2019 - 2023</p>
+                        <p class="text-gray-400">Graduated with honors, specializing in web development and database management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <section id="projects" class="bg-gray-800 py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">QuickBites</h3>
+                            <p class="text-gray-300 mb-4">A full-stack e-commerce solution with Django, Html, Css, Javascript, Tailwindcss, Bootstraps</p>
+                            <a href="https://sulemanawais1.pythonanywhere.com/" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left" data-aos-delay="200">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">Task Management App</h3>
+                            <p class="text-gray-300 mb-4">A responsive task management application built with Django, HTML, CSS and Bootstrap</p>
+                            <a href="https://suleman-todo.vercel.app/" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left" data-aos-delay="400">
+                        <img src="/placeholder.svg?height=200&width=400" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">RealTime Location Tracker</h3>
+                            <p class="text-gray-300 mb-4">An interactive location tracking app</p>
+                            <a href="#" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Testimonials</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-up">
+                        <p class="text-gray-300 mb-4">"Your Name is an exceptional developer who consistently delivers high-quality work. Their attention to detail and problem-solving skills are outstanding."</p>
+                        <div class="flex items-center">
+                            <img src="/placeholder.svg?height=50&width=50" alt="John Doe"
+                                 class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-semibold text-orangered">John Doe</p>
+                                <p class="text-gray-400">CEO, TechCorp Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-gray-300 mb-4">"Working with Your Name was a pleasure. They have a deep understanding of web technologies and always go above and beyond to meet project requirements."</p>
+                        <div class="flex items-center">
+                            <img src="/placeholder.svg?height=50&width=50" alt="Jane Smith"
+                                 class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-semibold text-orangered">Jane Smith</p>
+                                <p class="text-gray-400">Project Manager, WebSolutions Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-dark-gradient py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Get in Touch</h2>
+                <div class="max-w-2xl mx-auto">
+                    <form data-aos="zoom-in">
+                        <div class="mb-4">
+                            <label for="name" class="block mb-2 text-gray-300">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-orangered" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block mb-2 text-gray-300">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-orangered" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="block mb-2 text-gray-300">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-orangered" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-orangered text-white py-2 px-6 rounded-full text-lg font-semibold hover:bg-orange-600 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2023 Your Name. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-orangered transition-colors duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-orangered transition-colors duration-300"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-orangered transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission (you would typically handle this with a backend)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
