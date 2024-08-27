@@ -1,0 +1,52 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light background color */
+    color: #333; /* Dark text color for readability */
+}
+
+h1, h2 {
+    color: #ff4500; /* Orange-red */
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.tech-stack {
+    margin-top: 1rem;
+}
+
+.tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.tech-list li {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.tech-list li img {
+    margin-right: 0.5rem;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.skills-list li i {
+    margin-right
