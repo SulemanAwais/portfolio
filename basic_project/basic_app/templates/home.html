@@ -69,7 +69,12 @@
             position: relative;
             display: inline-block;
             transition: transform 0.3s;
+            padding: 8px; /* Adds some space around the logos */
+            background-color: white; /* White background inside the glowing circle */
+            border-radius: 50%; /* Ensures the background and glow form a circle */
+            box-shadow: 0 0 10px 3px rgba(255, 165, 0, 0.8); /* Orange glow */
         }
+
         .tech-item img {
             width: 48px;
             height: 48px;
@@ -92,7 +97,7 @@
             visibility: hidden;
             transition: opacity 0.3s;
             font-size: 0.9rem;
-            color: #333;
+            color: white;
             background-color: var(--bg-color, #fff); /* Default to white if --bg-color is not set */
         }
         .tech-item:hover::before {
@@ -138,7 +143,7 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Skills & Tech Stack</h2>
                 <div class=" bg-gray-700 p-6 rounded-lg tech-stack animate__animated animate__fadeIn">
-                    <ul class="tech-list flex flex-wrap justify-center">
+                    <ul class="tech-list flex flex-wrap justify-center ">
                         <li class="tech-item mt-4 mx-4" data-tech="Python" style="--bg-color: #3776AB;">
                             <img src="https://img.icons8.com/color/48/000000/python--v1.png" alt="Python"/>
                         </li>
@@ -154,8 +159,8 @@
                         <li class="tech-item mt-4 mx-4" data-tech="SQL" style="--bg-color: #F29111;">
                             <img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"/>
                         </li>
-                        <li class="tech-item mt-4 mx-4" data-tech="DRF" style="--bg-color: #092E20;">
-                            <img src="https://github.com/devicons/devicon/raw/master/icons/django/django-plain.svg" alt="DRF" width="48"/>
+                        <li class="tech-item mt-4 mx-4" data-tech="Django REST Framework" style="--bg-color: #C62828;">
+                            <img src="https://github.com/devicons/devicon/raw/master/icons/djangorest/djangorest-plain.svg" alt="DRF" width="48"/>
                         </li>
                         <li class="tech-item mt-4 mx-4" data-tech="Docker" style="--bg-color: #2496ED;">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" alt="Docker" width="48"/>
@@ -163,14 +168,14 @@
                         <li class="tech-item mt-4 mx-4" data-tech="Jira" style="--bg-color: #0052CC;">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg" alt="Jira" width="48"/>
                         </li>
-                        <li class="tech-item mt-4 mx-4" data-tech="AWS" style="--bg-color: #FF9900;">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="48"/>
+                        <li class="tech-item mt-4 mx-4" data-tech="JavaScript" style="--bg-color: #F7DF1E;">
+                            <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/>
                         </li>
                         <li class="tech-item mt-4 mx-4" data-tech="Bootstrap" style="--bg-color: #7952B3;">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="Bootstrap" width="48"/>
                         </li>
-                        <li class="tech-item mt-4 mx-4" data-tech="JavaScript" style="--bg-color: #F7DF1E;">
-                            <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"/>
+                        <li class="tech-item mt-4 mx-4" data-tech="AWS" style="--bg-color: #FF9900;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="48"/>
                         </li>
                         <li class="tech-item mt-4 mx-4" data-tech="HTML" style="--bg-color: #E34F26;">
                             <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"/>
