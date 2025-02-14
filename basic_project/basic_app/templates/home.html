@@ -37,11 +37,13 @@
             text-decoration: none;
             font-size: 1rem; /* Adjust font size as needed */
             transition: opacity 0.3s ease-in-out;
+
         }
 
         .gradient-text a:hover {
-            opacity: 0.8; /* Subtle fade effect on hover */
-        }
+    letter-spacing: 0.3px; /* Expands spacing */
+    color: white;
+}
         .bg-dark-gradient {
             background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
         }
@@ -192,8 +194,8 @@
                         <label for="inputType" class="form-label gradient-text">Input Type</label>
                         <select class="form-select" id="inputType">
                             <option value="binary">Binary</option>
-                            <option value="decimal">Decimal</option>
-                            <option value="hexadecimal">Hexadecimal</option>
+<!--                            <option value="decimal">Decimal</option>-->
+<!--                            <option value="hexadecimal">Hexadecimal</option>-->
                         </select>
                     </div>
                     <div class="mb-3">
@@ -543,51 +545,36 @@
         });
     </script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
     const bitwiseForm = document.getElementById('bitwiseForm');
     const resultElement = document.getElementById('result');
 
     bitwiseForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form submission from refreshing the page
 
-        const inputType = document.getElementById('inputType').value;
-        const input1 = document.getElementById('input1').value;
-        const input2 = document.getElementById('input2').value;
+        const input1 = document.getElementById('input1').value.trim();
+        const input2 = document.getElementById('input2').value.trim();
         const operation = document.getElementById('operation').value;
 
-        // Convert inputs based on input type
-        let num1, num2;
-        try {
-            if (inputType === 'binary') {
-                num1 = parseInt(input1, 2);
-                num2 = parseInt(input2, 2);
-            } else if (inputType === 'decimal') {
-                num1 = parseInt(input1);
-                num2 = parseInt(input2);
-            } else if (inputType === 'hexadecimal') {
-                num1 = parseInt(input1, 16);
-                num2 = parseInt(input2, 16);
-            }
-
-            if (isNaN(num1) || isNaN(num2)) {
-                throw new Error('Invalid input');
-            }
-        } catch (error) {
-            resultElement.textContent = 'Error: Invalid input for the selected type';
+        // Validate binary inputs (allow leading zeros, but only 0s and 1s)
+        const isBinary = (str) => /^[01]+$/.test(str);
+        if (!isBinary(input1) || (operation !== 'NOT' && !isBinary(input2))) {
+            resultElement.textContent = "Error: Inputs must contain only 0s and 1s";
             return;
         }
 
+        // Convert binary strings to integers
+        let num1 = parseInt(input1, 2);
+        let num2 = operation !== 'NOT' ? parseInt(input2, 2) : null;
         let result;
+
         try {
-            switch(operation) {
+            switch (operation) {
                 case 'AND':
                     result = num1 & num2;
                     break;
                 case 'OR':
                     result = num1 | num2;
-                    break;
-                case 'XOR':
-                    result = num1 ^ num2;
                     break;
                 case 'NAND':
                     result = ~(num1 & num2);
@@ -598,69 +585,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 case 'XNOR':
                     result = ~(num1 ^ num2);
                     break;
-                case 'LEFT_SHIFT':
-                    result = num1 << num2;
-                    break;
-                case 'RIGHT_SHIFT':
-                    result = num1 >> num2;
-                    break;
-                case 'ARITHMETIC_SHIFT':
-                    result = num1 >>> num2;
-                    break;
                 case 'NOT':
                     result = ~num1;
                     break;
-                case 'MASK':
-                    result = num1 & num2;
-                    break;
-                case 'FLIP':
-                    result = num1 ^ num2;
-                    break;
-                case 'SET_BIT':
-                    result = num1 | (1 << num2);
-                    break;
-                case 'CLEAR_BIT':
-                    result = num1 & ~(1 << num2);
-                    break;
-                case 'TOGGLE_BIT':
-                    result = num1 ^ (1 << num2);
-                    break;
-                case 'CHECK_BIT':
-                    result = (num1 & (1 << num2)) !== 0;
-                    break;
-                case 'COUNT_BITS':
-                    result = num1.toString(2).split('1').length - 1;
-                    break;
-                case 'PARITY':
-                    result = (num1.toString(2).split('1').length - 1) % 2 === 0 ? 'Even' : 'Odd';
-                    break;
-                case 'ROTATE_LEFT':
-                    result = (num1 << num2) | (num1 >>> (32 - num2));
-                    break;
-                case 'ROTATE_RIGHT':
-                    result = (num1 >>> num2) | (num1 << (32 - num2));
-                    break;
                 default:
-                    throw new Error('Operation not implemented');
+                    throw new Error('Invalid operation');
             }
         } catch (error) {
-            resultElement.textContent = 'Error: ' + error.message;
+            resultElement.textContent = "Error: " + error.message;
             return;
         }
 
-        // Convert result back to the input type
-        let displayResult;
-        if (inputType === 'binary') {
-            displayResult = result.toString(2);
-        } else if (inputType === 'decimal') {
-            displayResult = result.toString();
-        } else if (inputType === 'hexadecimal') {
-            displayResult = result.toString(16).toUpperCase();
-        }
+        // Convert result to binary and ensure it's properly formatted
+        const displayResult = (result >>> 0).toString(2);
 
-        resultElement.textContent = displayResult;
+        resultElement.textContent = `Result: ${displayResult}`;
     });
 });
+
 </script>
 </body>
 </html>
