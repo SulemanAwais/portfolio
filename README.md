@@ -18,15 +18,17 @@ Project Deployed link 👉 [https://sulemanawais0.pythonanywhere.com/]
 2. **Navigate to the Project Directory**
    ```bash
    cd django-deployment-practice
-3. **Create a Virtual Environment**
+3. **Create and activate  Virtual Environment**
 
    ```bash 
    python -m venv venv
+   .\venv\Scripts\activate #for windows
+    # source venv\bin\activate #for linux/macOS
    ```
 4. **Install Python 3.10**
 5. **Install Django**
 ```bash
-pip install django=4.0.6
+  pip install django
 ```
 6. **Change current directory**
 ```bash
