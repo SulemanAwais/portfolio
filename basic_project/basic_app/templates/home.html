@@ -368,6 +368,58 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12 section-heading text-white">Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                                        <!-- Projects with thumbnails -->
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <img src="{% static 'basic_app/cryptonary.png' %}?height=200&width=400" alt="cryptonary" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">Cryptonary | 3000+ monthly traffic</h3>
+                            <p class="text-gray-300 mb-4">Cryptonary is a platform dedicated to simplifying cryptocurrency and blockchain technology for users. It offers a range of resources, including educational content, market analysis, and research tools, aiming to make the complex world of crypto more accessible.</p>
+                            <a href="https://cryptonary.com/" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <img src="{% static 'basic_app/virtual-phone.png' %}?height=200&width=400" alt="virtual-phone" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">Get On Call</h3>
+                            <p class="text-gray-300 mb-4">A real-time AI powered full-stack flask based web application that generates medical notes from calls between patient and doctor.</p>
+                            <br>
+                            <a href="https://phone.meissasoft.com" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
+                        <img src="{% static 'basic_app/aifeed.png' %}?height=200&width=400" alt="aifeed" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">AI Feed</h3>
+                            <p class="text-gray-300 mb-4">Worked on the backend part of this web application that analyzes and find patterns from social media platforms.</p>
+                            <a href="https://cloudai.solutions/aifeed/" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left">
+                        <img src="{% static 'basic_app/quickbites.png' %}?height=200&width=400" alt="Project 1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">QuickBites</h3>
+                            <p class="text-gray-300 mb-4">A full-stack e-commerce solution with Django, Html, Css, Javascript, Tailwindcss, Bootstraps</p>
+                            <a href="https://sulemanawais1.pythonanywhere.com/" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left" data-aos-delay="200">
+                        <img src="{% static 'basic_app/todo.png' %}?height=200&width=400" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">Task Management App</h3>
+                            <p class="text-gray-300 mb-4">A responsive task management application built with Django, HTML, CSS and Bootstrap</p>
+                            <a href="https://suleman-todo.vercel.app/" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left" data-aos-delay="400">
+                        <img src="{% static 'basic_app/tracker.png' %}?height=200&width=400" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2 text-orangered">RealTime Location Tracker</h3>
+                            <p class="text-gray-300 mb-4">An interactive location tracking app</p>
+                            <a href="#" class="text-orangered hover:text-orange-500">View Project</a>
+                        </div>
+                    </div>
+
                     <!-- Projects without thumbnails -->
                     <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up">
                         <div class="p-6">
@@ -377,14 +429,7 @@
                             <a href="http://github.com/meissasoft/tranqui" class="text-orangered hover:text-orange-500">View Project</a>
                         </div>
                     </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-orangered">Virtual phone</h3>
-                            <p class="text-gray-300 mb-4">A real-time full-stack flask based web application that generates medical notes from calls between patient and doctor.</p>
-                            <br>
-                            <a href="https://phone.meissasoft.com" class="text-orangered hover:text-orange-500">View Project</a>
-                        </div>
-                    </div>
+                    
                     <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold mb-2 text-orangered">CRM Lead Synchronizer</h3>
@@ -414,47 +459,6 @@
                             <p class="text-gray-300 mb-4">A web application that helps the user to manage their ecommerce store and provide data-analytics</p>
                             <br>
                             <a href="https://www.fynite.ai" class="text-orangered hover:text-orange-500">View Project</a>
-                        </div>
-                    </div>
-                                        <!-- Projects with thumbnails -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
-                        <img src="{% static 'basic_app/aifeed.PNG' %}?height=200&width=400" alt="aifeed" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-orangered">AI Feed</h3>
-                            <p class="text-gray-300 mb-4">Worked on the backend part of this web application that analyzes and find patterns from social media platforms.</p>
-                            <a href="https://cloudai.solutions/aifeed/" class="text-orangered hover:text-orange-500">View Project</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="fade-up" data-aos-delay="400">
-                        <img src="{% static 'basic_app/cryptonary.PNG' %}?height=200&width=400" alt="cryptonary" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-orangered">Cryptonary | 3000+ monthly traffic</h3>
-                            <p class="text-gray-300 mb-4">Cryptonary is a platform dedicated to simplifying cryptocurrency and blockchain technology for users. It offers a range of resources, including educational content, market analysis, and research tools, aiming to make the complex world of crypto more accessible.</p>
-                            <a href="https://cryptonary.com/" class="text-orangered hover:text-orange-500">View Project</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left">
-                        <img src="{% static 'basic_app/quickbites.png' %}?height=200&width=400" alt="Project 1" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-orangered">QuickBites</h3>
-                            <p class="text-gray-300 mb-4">A full-stack e-commerce solution with Django, Html, Css, Javascript, Tailwindcss, Bootstraps</p>
-                            <a href="https://sulemanawais1.pythonanywhere.com/" class="text-orangered hover:text-orange-500">View Project</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left" data-aos-delay="200">
-                        <img src="{% static 'basic_app/todo.png' %}?height=200&width=400" alt="Project 2" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-orangered">Task Management App</h3>
-                            <p class="text-gray-300 mb-4">A responsive task management application built with Django, HTML, CSS and Bootstrap</p>
-                            <a href="https://suleman-todo.vercel.app/" class="text-orangered hover:text-orange-500">View Project</a>
-                        </div>
-                    </div>
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-md card-hover transition duration-300" data-aos="flip-left" data-aos-delay="400">
-                        <img src="{% static 'basic_app/tracker.png' %}?height=200&width=400" alt="Project 3" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2 text-orangered">RealTime Location Tracker</h3>
-                            <p class="text-gray-300 mb-4">An interactive location tracking app</p>
-                            <a href="#" class="text-orangered hover:text-orange-500">View Project</a>
                         </div>
                     </div>
 
